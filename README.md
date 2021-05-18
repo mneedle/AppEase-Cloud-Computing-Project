@@ -2,7 +2,7 @@
 
 Cloud Computing Project Part 2: AppEase
 
-1. 'Sample Data/simulate_data_and_labels.py'
+1. 'simulate_data_and_labels.py'
 This script creates simulated AppEase data in 2 JSON files ('simulated_health_data.json' for simulated user health data and 'random_labels.json' for simulated anxiety attack labels). This script should be run by calling "python3 create_data_and_labels.py [rows] [users]" where [rows] are the desired instances of collected data and [users] are the desired number of simulated users the data are collected from. The 'Sample Data' Folder contains an example of simulated data and labels for 100 instances of data for 5 distinct users. 
 NOTE: At least 63 rows of data are required for Azure Machine Learning analytics (assuming a 0.8/0.2 train/test split).
 
