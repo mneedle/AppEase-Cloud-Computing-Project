@@ -1,4 +1,4 @@
-# AppEase
+# AppEase Cloud Computing Project
 
 Authors: Max Needle, Gautham Dinesh Kumar, Kiran Datti, Daksh Kumar
 
