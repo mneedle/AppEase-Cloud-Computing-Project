@@ -4,7 +4,7 @@ Authors: Max Needle, Gautham Dinesh Kumar, Kiran Datti, Daksh Kumar
 
 This repository contains the code for part 2 of our Cloud Computing Project, which migrated the AppEase system to the Azure cloud. The AppEase system was originally built by Nandhitha Raghuram, Nishchitha Prasad, and Vidit Bhargava for the NYU Rory Meyers College of Nursing. This system is meant to detect and respond to a person’s anxiety attacks. An Internet of Things (IoT) component of the application collects users’ health data from an iWatch (WatchOS) device connected to an iPhone (iOS) and then sends it to a web application managed on a Kafka server. Additionally, if an anxiety attack is detected, the web application can send notifications to the iWatch as well as options for relaxing games the user can play to calm their anxiety. For our portion of the project, we hoped to migrate this application to the Cloud to leverage its potential for cost savings, security, flexibility, mobility, and increased collaboration.
 
-AppEase user health data was simulated by running the 'simulate_data_and_labels.py' script. This data was uploaded an Azure Storage Container through an Azure IoT Hub Device using the below 'AppEaseIoT.py' script. Automated machine learning (ML) analysis was run on the data to predict simulated labels using the 'AppEaseML.ipynb' notebook. Finally, these IoT and ML cloud components were integrated into a peer-to-peer (P2P) messaging network to allow simulated data to be quickly and automatically uploaded (IoT) and analyzed (ML) before communicating the results.
+AppEase user health data and anxiety attack labels were simulated by running the 'simulate_data_and_labels.py' script. This data was uploaded to an Azure Storage Container through an Azure IoT Hub Device using the below '(RETIRED) AppEaseIoT.py' script. Automated machine learning (ML) analysis was run on the data to predict the simulated labels using the 'AppEaseML.ipynb' notebook. Finally, these IoT and ML cloud components were integrated into a peer-to-peer (P2P) messaging network to allow the simulated data to be quickly and automatically uploaded (IoT) and analyzed (ML).
 
 
 
@@ -13,7 +13,7 @@ AppEase user health data was simulated by running the 'simulate_data_and_labels.
 This script creates simulated AppEase data in 2 JSON files ('simulated_health_data.json' for simulated user health data and 'random_labels.json' for simulated anxiety attack labels). This script should be run by calling "python3 create_data_and_labels.py [rows] [users]" where [rows] are the desired instances of collected data and [users] are the desired number of simulated users the data are collected from. The 'Sample Data' Folder contains an example of simulated data and labels for 100 instances of data for 5 distinct users. 
 NOTE: At least 63 rows of data are required for Azure Machine Learning analytics (assuming a 0.8/0.2 train/test split).
 
-2. (RETIRED) 'AppEaseIoT.py'
+2. '(RETIRED) AppEaseIoT.py'
 
 This script uploads a file as an Azure Storage Blob to a Container through an IoT Hub Device. This script requires an Azure IoT Hub that has been associated with a publicly-accessible Azure Storage Account Container and contains at least one IoT Device. This script should be run by calling "python3 AppEaseIoT.py [device_conn_str] [file]" where [device_conn_str] is the connection string of the IoT device created in the Azure IoT Hub and [file] is the name of the file in the local directory to be uploaded (i.e., 'simulated_health_data.json').
 
